@@ -53,6 +53,8 @@ export class BingoComponent implements OnInit {
     this.drawnNumbers.push(newNumber);
     this.lastDrawnNumber = newNumber;
 
+    //this.speakNumber(newNumber); // Anunciar el número sorteado por voz
+
     if (this.availableNumbers.length === 0) {
       this.isGameOver = true;
     }
@@ -61,4 +63,14 @@ export class BingoComponent implements OnInit {
   get sortedDrawnNumbers(): number[] {
     return [...this.drawnNumbers].sort((a, b) => a - b);
   }
+
+  /**
+   * Utiliza la API de SpeechSynthesis para anunciar el número sorteado
+   * @param num Número a anunciar
+   */
+  /*private speakNumber(num: number): void {
+    const utter = new SpeechSynthesisUtterance(num.toString());
+    utter.lang = 'es-ES'; // Español
+    window.speechSynthesis.speak(utter);
+  }*/
 }
