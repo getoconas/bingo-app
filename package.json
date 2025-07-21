@@ -1,6 +1,6 @@
 {
   "name": "bingo-app",
-  "version": "0.2.3",
+  "version": "1.1.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
