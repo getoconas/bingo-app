@@ -24,14 +24,13 @@
     </div>
   </div>
 
-  <!-- Botones -->
+  <!-- Boton de sortear -->
   <div class="flex flex-col md:flex-row gap-4 mb-4">
     <button (click)="drawNumber()" [disabled]="isGameOver" class="px-8 py-4 rounded-full text-xl font-bold transition-all duration-300 shadow-lg transform hover:-translate-y-1" [ngClass]="{'bg-gray-400 cursor-not-allowed': isGameOver, 'bg-green-500 hover:bg-green-600 text-white': !isGameOver}"> {{ isGameOver ? 'Juego Terminado' : 'Sortear Número' }} </button>
-    <button (click)="resetGame()" class="px-8 py-4 rounded-full bg-red-500 hover:bg-red-600 text-white text-xl font-bold shadow-lg transform hover:-translate-y-1 transition-all duration-300">Reiniciar Juego</button>
   </div>
 
   <!-- Números sorteados -->
-  <div class="bg-white text-gray-800 p-6 rounded-2xl shadow-inner border-2 border-gray-200 w-full mt-2 mb-4">
+  <div class="bg-white text-gray-800 p-6 rounded-2xl shadow-inner border-2 border-gray-200 w-full mb-4">
     <h2 class="text-2xl font-bold mb-4 text-center">Números Sorteados ({{ drawnNumbers.length }}/{{ maxNumber }})</h2>
     <p *ngIf="drawnNumbers.length === 0" class="text-center text-gray-500 text-lg">Aún no se han sorteado números</p>
     <div *ngIf="drawnNumbers.length > 0" class="grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3 max-h-96 overflow-y-auto p-2 scrollbar-thin scrollbar-thumb-purple-400 scrollbar-track-purple-100">
@@ -39,6 +38,11 @@
         {{ number }}
       </div>
     </div>
+  </div>
+
+  <!-- Boton de reiniciar -->
+  <div class="flex flex-col md:flex-row gap-4 mb-4">
+    <button (click)="resetGame()" class="px-8 py-4 rounded-full bg-red-500 hover:bg-red-600 text-white text-xl font-bold shadow-lg transform hover:-translate-y-1 transition-all duration-300">Reiniciar Juego</button>
   </div>
 
   <p class="p-2"> <!-- Espacio entre el footer -->
