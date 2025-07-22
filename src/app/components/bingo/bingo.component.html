@@ -17,10 +17,16 @@
   <!-- Último número sorteado -->
   <div class="bg-purple-100 text-purple-800 rounded-2xl p-6 shadow-inner mb-4 w-full max-w-md text-center">
     <p class="text-xl md:text-2xl font-semibold mb-4">Último número sorteado</p>
-    <div class="flex items-center justify-center h-28 w-28 md:h-36 md:w-36 mx-auto bg-purple-600 text-white rounded-full shadow-lg">
-      <span class="text-6xl font-bold">
-        {{ lastDrawnNumber !== null ? lastDrawnNumber : '?' }}
-      </span>
+
+    <div class="flex items-center justify-center h-40 w-40 mx-auto">
+      <div class="relative flex items-center justify-center h-full w-full">
+        <div class="absolute inset-0 rounded-full bg-purple-700"></div>
+        <div class="relative flex items-center justify-center h-24 w-24 rounded-full bg-white">
+          <span class="text-6xl font-bold text-black">
+            {{ lastDrawnNumber !== null ? lastDrawnNumber : '?' }}
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
